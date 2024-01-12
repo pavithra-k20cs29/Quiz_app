@@ -33,7 +33,7 @@ export default function Main() {
         </form>
 
         <div className='start'>
-            <Link className='btn' to={'quiz'} onClick={startQuiz}> Start Quiz ! </Link>
+            <Link className='btn' to={'/quiz'} onClick={startQuiz}> Start Quiz ! </Link>
         </div>
 
     </div>
