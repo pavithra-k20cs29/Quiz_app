@@ -8,7 +8,6 @@ import { resetAllAction } from '../redux/question_reducer'
 import { resetResultAction } from '../redux/result_reducer'
 import { usePublishResult } from '../hooks/setResult'
 
-
 export default function Result() {
 
     const dispatch = useDispatch()
@@ -16,16 +15,16 @@ export default function Result() {
 
     const totalPoints = queue.length * 5;
     const attempts = attempts_Number(result);
-    const earnPoints = earnPoints_Number(result, answers, 5)
+    const earnPoints = earnPoints_Number(result,answers,totalPoints-queue.length)
     const flag = flagResult(totalPoints, earnPoints)
 
     //storse user result
     usePublishResult({
-        result,
+        result : answers,
         username : userId,
-        attempts,
+        attempts : attempts,
         points : earnPoints,
-        achived : flag ? "Passed" : "Failed "
+        achieved : flag ? "Passed" : "Failed "
     })
 
     function onRestart(){

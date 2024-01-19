@@ -16,14 +16,13 @@ export default function Quiz() {
   function onNext() {
     if (trace < queue.length) {
       const currentSelectedOption = selectedOption;
+
       // Dispatch the action to move to the next question
       dispatch(MoveNextQuestion());
 
       // Push the selected answer to the result array
       dispatch(PushAnswer(currentSelectedOption));
-
-      // Reset selected option for the next question
-      setSelectedOption(null);
+    
     }
   }
 

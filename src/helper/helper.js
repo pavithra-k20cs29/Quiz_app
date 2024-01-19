@@ -11,7 +11,7 @@ export function earnPoints_Number(result, answers, point) {
     .map((element, i) => answers[i] === element)
     .filter(i => i)
     .map(i => point)
-    .reduce((prev, curr) => prev + curr, point - 2); //0 as (i-2)
+    .reduce((prev, curr) => prev + curr, point); //0 as (i-2)
 }
 
 export function flagResult(totalPoints, earnPoints) {
